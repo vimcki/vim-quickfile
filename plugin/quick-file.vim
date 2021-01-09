@@ -1,5 +1,5 @@
 function! QuickFile(reference)
-	let reference_file = ".quickfile"
+	let reference_file = get(g:, 'quickfile_reference_file', '.quickfile')
 	if filereadable(reference_file)
 		let reference_file_path = reference_file
 	else
