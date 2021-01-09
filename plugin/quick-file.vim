@@ -1,5 +1,14 @@
 function! QuickFile(reference)
-	let lines = readfile('.quickfile', '')
+	let reference_file = ".quickfile"
+	if filereadable(reference_file)
+		let reference_file_path = reference_file
+	else
+		" TODO test if git present and if git is even installed
+		let git_root = system("git rev-parse --show-toplevel | tr -d '\\n'")
+		let reference_file_path = git_root . "/" . reference_file
+	endif
+	echom reference_file_path
+	let lines = readfile(reference_file_path, '')
 	for line in lines
 		let split_line = split(line, "=")
 		if len(split_line) != 2
