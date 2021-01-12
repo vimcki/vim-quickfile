@@ -17,19 +17,21 @@ function! QuickFile(reference)
 			return
 		endif
 		let [ref, path] = split_line
-		let splited_path = split(path, ",")
-		if len(splited_path) == 1
-			" open file normally
-			if ref ==? a:reference
+		if ref ==? a:reference
+			let splited_path = split(path, ",")
+			if len(splited_path) == 1
+				" open file normally
 				execute "edit " . root . "/" . path
+			else
+				" Do quicklist/fzf thing
+				try
+					call fzf#run(fzf#wrap({'source': splited_path}))
+				catch
+					echom "fzf missing"
+				endtry
 			endif
-		else
-			" Do quicklist/fzf thing
-			try
-				call fzf#run(fzf#wrap({'source': splited_path}))
-			catch
-				echom "fzf missing"
-			endtry
+		return 
 		endif
 	endfor
+	echom "Didn't find " . a:reference . " in " . reference_file
 endfunction
