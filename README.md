@@ -29,6 +29,18 @@ This plugin allows you to quickly open commonly accessed files.
   eliminate second and third step. All you have to do is think 'I want to see
   configuration file' and hit correct mapping
 
+## Installation
+
+Install as any other vim plugin.
+
+* vim-plug: ```Plug 'vimcki/vim-quickfile'```
+* vundle: ```Plugin 'vimcki/vim-quickfile'```
+
+git is required for finding project root in case of reference file missing in
+current directory.
+
+fzf.vim plugin is required if you want to load multiple files in single reference.
+
 ## How to use this plugin?
 
 First you need a mapping to call QuickFile function with reference name. This
