@@ -75,7 +75,7 @@ ci=.gitlab-ci.yml
 dependencies=requirements.txt
 ```
 
-Exclaimer: this is early version and way of binding or reference file
+Note: this is early version and way of binding or reference file
 format may change
 
 ## Customization
