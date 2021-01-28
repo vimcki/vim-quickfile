@@ -74,3 +74,12 @@ main=main.py
 ci=.gitlab-ci.yml
 dependencies=requirements.txt
 ```
+
+## Customisation
+
+If you don't like .quickfile file name you can use different file name by
+setting global variable:
+
+``` vimscript
+g:quickfile_reference_file
+```
