@@ -75,7 +75,7 @@ ci=.gitlab-ci.yml
 dependencies=requirements.txt
 ```
 
-## Customisation
+## Customization
 
 If you don't like .quickfile file name you can use different file name by
 setting global variable:
